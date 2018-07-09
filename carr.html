@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style >
+	body {
+		background-image: = url("green.png");
+	}
+</style>
+</head>
+<body>
+	<button onclick="xred()">RED</button>
+	<button onclick="xblue()">BLUE</button>
+	<button onclick="xgreen()">GREEN</button>
+	<button onclick="clearInterval(time)">STOP</button>
+	<script> 
+		var i = 0;
+		function change() {
+			if(i==0) {
+				xred();
+			}
+			else if(i==1) {
+				xblue();
+			}
+  			else if (i==2) {
+  				xgreen();
+  			}
+ 			i++;
+ 			if(i > 2) {
+    			i = 0;
+ 			 }
+		}
+		var time = setInterval(change, 2000);
+		function xred() {
+			document.body.style.backgroundImage = "url('red.png')";
+		}
+
+		function xblue() {
+			document.body.style.backgroundImage = "url('blue.png')";
+		}
+		function xgreen() {
+			document.body.style.backgroundImage = "url('green.png')";
+		}
+	</script>
+</body>
+</html>
